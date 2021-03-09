@@ -47,7 +47,7 @@ public class Libretto {
 		return risultato;
 	}
 	
-	//e' modo migliore TO DO
+	//e' modo migliore
 	public Libretto votiUguali(int punteggio) { // ti do un libretto in cui ho filtrato i dati che mi servono
 	
 		Libretto risultato = new Libretto();
@@ -57,5 +57,23 @@ public class Libretto {
 			}
 		}
 		return risultato;
+	}
+	
+	/**
+	 *  Ricerca un voto corrispondente del corso di cui è specificato il none 
+	 *  Se il corso non esiste, restituisce null.
+	 * @param nomeCorso
+	 * @return
+	 */
+	public Voto ricercaCorso(String nomeCorso) {
+		
+		Voto res = null;
+		for(Voto v : this.voti) {
+			if(v.getNome().equals(nomeCorso)) { //equals() per uguaglianza, compareTo() per ORDINAMENTO
+				res = v;
+				break;
+			}
+		}
+		return res;
 	}
 }
